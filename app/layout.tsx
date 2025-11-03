@@ -1,9 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Space_Grotesk, DM_Sans } from 'next/font/google'
+import { Space_Grotesk, DM_Sans } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "next-themes"
-import { LanguageProvider } from "@/lib/language-context"
+import { Providers } from "@/components/providers"  // ✅ use new wrapper
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -29,7 +28,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${spaceGrotesk.variable} ${dmSans.variable} antialiased`}
+      suppressHydrationWarning
+    >
       <head>
         <style>{`
 html {
@@ -40,11 +43,8 @@ html {
         `}</style>
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
-          <LanguageProvider>
-            {children}
-          </LanguageProvider>
-        </ThemeProvider>
+        {/* ✅ wrap providers here */}
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
