@@ -15,7 +15,7 @@ import {
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
-import { ThemeLanguageToggle } from "@/components/theme-language-toggle"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface DashboardLayoutProps {
   children: React.ReactNode
@@ -174,7 +174,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 <span className="text-sm text-muted-foreground">System Online</span>
               </div>
 
-              <ThemeLanguageToggle />
+              <ThemeToggle />
 
               {/* Notifications */}
               <Button variant="ghost" size="sm" className="relative transition-colors duration-200 hover:bg-secondary">

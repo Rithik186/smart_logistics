@@ -3,40 +3,36 @@
 import DashboardLayout from "@/components/dashboard-layout"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { getTranslation } from "@/lib/i18n"
-import { useLanguage } from "@/lib/language-context"
 import { useTheme } from "next-themes"
 import { Progress } from "@/components/ui/progress"
 import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 export default function DashboardPage() {
-  const { language } = useLanguage()
   const { theme } = useTheme()
-  const t = (key: string) => getTranslation(language, key)
 
   const metrics = [
     {
-      title: t('metrics.totalBoxes'),
+      title: 'Total Boxes',
       value: '0',
-      description: t('dashboard.upcomingFeature'),
+      description: 'Upcoming Feature',
       icon: '📦',
     },
     {
-      title: t('metrics.activeLocalities'),
+      title: 'Active Localities',
       value: '0',
-      description: t('dashboard.upcomingFeature'),
+      description: 'Upcoming Feature',
       icon: '📍',
     },
     {
-      title: t('metrics.inTransit'),
+      title: 'In Transit',
       value: '0',
-      description: t('dashboard.upcomingFeature'),
+      description: 'Upcoming Feature',
       icon: '🚚',
     },
     {
-      title: t('metrics.alerts'),
+      title: 'Alerts',
       value: '0',
-      description: t('dashboard.upcomingFeature'),
+      description: 'Upcoming Feature',
       icon: '⚠️',
     },
   ]
@@ -64,10 +60,10 @@ export default function DashboardPage() {
         {/* Welcome Section */}
         <div className="animate-fade-in">
           <h1 className="text-3xl md:text-4xl font-serif font-bold text-foreground mb-2">
-            {t('dashboard.welcome')}
+            Welcome To SmartLogistics Dashboard
           </h1>
           <p className="text-base text-muted-foreground">
-            {t('dashboard.subtitle')}
+            Monitor your logistics operations with ease.
           </p>
         </div>
 
@@ -91,14 +87,13 @@ export default function DashboardPage() {
             </Card>
           ))}
         </div>
-
         {/* Charts Section - Two column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Box Health Status */}
           <Card className="transition-all duration-300 hover:shadow-md dark:bg-slate-900 dark:border-slate-700">
             <CardHeader>
-              <CardTitle className="text-lg">{t('metrics.systemHealth')}</CardTitle>
-              <CardDescription>{t('dashboard.comingSoon')}</CardDescription>
+              <CardTitle className="text-lg">System Health</CardTitle>
+              <CardDescription>Coming Soon</CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={250}>
@@ -122,8 +117,8 @@ export default function DashboardPage() {
           {/* Box Utilization Trend */}
           <Card className="transition-all duration-300 hover:shadow-md dark:bg-slate-900 dark:border-slate-700">
             <CardHeader>
-              <CardTitle className="text-lg">{t('metrics.boxUtilization')}</CardTitle>
-              <CardDescription>{t('dashboard.comingSoon')}</CardDescription>
+              <CardTitle className="text-lg">Box Utilization</CardTitle>
+              <CardDescription>Coming Soon</CardDescription>
             </CardHeader>
             <CardContent>
               <ResponsiveContainer width="100%" height={250}>
@@ -150,13 +145,13 @@ export default function DashboardPage() {
           {/* Recent Activity */}
           <Card className="transition-all duration-300 hover:shadow-md dark:bg-slate-900 dark:border-slate-700">
             <CardHeader>
-              <CardTitle>{t('recentActivity.title')}</CardTitle>
-              <CardDescription>{t('dashboard.comingSoon')}</CardDescription>
+              <CardTitle>Recent Activity</CardTitle>
+              <CardDescription>Coming Soon</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-center py-8 text-center">
                 <div>
-                  <p className="text-muted-foreground text-sm">{t('dashboard.comingSoon')}</p>
+                  <p className="text-muted-foreground text-sm">Coming Soon</p>
                   <p className="text-xs text-muted-foreground/60 mt-1">Activity tracking will be available soon</p>
                 </div>
               </div>
@@ -166,13 +161,13 @@ export default function DashboardPage() {
           {/* System Status */}
           <Card className="transition-all duration-300 hover:shadow-md dark:bg-slate-900 dark:border-slate-700">
             <CardHeader>
-              <CardTitle>{t('systemStatus.title')}</CardTitle>
-              <CardDescription>{t('dashboard.comingSoon')}</CardDescription>
+              <CardTitle>System Status</CardTitle>
+              <CardDescription>Coming Soon</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-center py-8 text-center">
                 <div>
-                  <p className="text-muted-foreground text-sm">{t('dashboard.comingSoon')}</p>
+                  <p className="text-muted-foreground text-sm">Coming Soon</p>
                   <p className="text-xs text-muted-foreground/60 mt-1">System monitoring will be available soon</p>
                 </div>
               </div>
